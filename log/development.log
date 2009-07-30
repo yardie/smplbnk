@@ -1,0 +1,2453 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (5.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBookings (20090730122328)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "arrival_date" date, "departure_date" date, "bunks" integer, "status" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090730122328')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("bookings")[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-07-30 13:24:03) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:26:00) [GET]
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#new (for 127.0.0.1 at 2009-07-30 13:26:13) [GET]
+Rendering template within layouts/bookings
+Rendering bookings/new
+Completed in 84ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:26:20) [GET]
+  [4;35;1mBooking Load (0.8ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 19ms (View: 3, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#new (for 127.0.0.1 at 2009-07-30 13:26:22) [GET]
+Rendering template within layouts/bookings
+Rendering bookings/new
+Completed in 45ms (View: 26, DB: 0) | 200 OK [http://localhost/bookings/new]
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2009-07-30 13:26:43) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4sja8waQPkvFmHEhUTSh3BNOzfPfes7eY3R5+JmW6NQ=", "booking"=>{"arrival_date(3i)"=>"30", "departure_date(1i)"=>"2009", "bunks"=>"4", "departure_date(2i)"=>"8", "departure_date(3i)"=>"12", "status"=>"Pencil", "arrival_date(1i)"=>"2009", "arrival_date(2i)"=>"7"}}
+  [4;36;1mBooking Create (0.5ms)[0m   [0;1mINSERT INTO "bookings" ("arrival_date", "created_at", "updated_at", "bunks", "departure_date", "status") VALUES('2009-07-30', '2009-07-30 12:26:43', '2009-07-30 12:26:43', 4, '2009-08-12', 'Pencil')[0m
+Redirected to http://localhost:3000/bookings/1
+Completed in 103ms (DB: 0) | 302 Found [http://localhost/bookings]
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 13:26:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 1) [0m
+Rendering template within layouts/bookings
+Rendering bookings/show
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/bookings/1]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:26:46) [GET]
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#new (for 127.0.0.1 at 2009-07-30 13:26:48) [GET]
+Rendering template within layouts/bookings
+Rendering bookings/new
+Completed in 44ms (View: 26, DB: 0) | 200 OK [http://localhost/bookings/new]
+
+
+Processing BookingsController#create (for 127.0.0.1 at 2009-07-30 13:27:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4sja8waQPkvFmHEhUTSh3BNOzfPfes7eY3R5+JmW6NQ=", "booking"=>{"arrival_date(3i)"=>"30", "departure_date(1i)"=>"2009", "bunks"=>"2", "departure_date(2i)"=>"8", "departure_date(3i)"=>"2", "status"=>"Confirmed", "arrival_date(1i)"=>"2009", "arrival_date(2i)"=>"7"}}
+  [4;35;1mBooking Create (0.9ms)[0m   [0mINSERT INTO "bookings" ("arrival_date", "created_at", "updated_at", "bunks", "departure_date", "status") VALUES('2009-07-30', '2009-07-30 12:27:08', '2009-07-30 12:27:08', 2, '2009-08-02', 'Confirmed')[0m
+Redirected to http://localhost:3000/bookings/2
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/bookings]
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 13:27:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mBooking Load (1.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 2) [0m
+Rendering template within layouts/bookings
+Rendering bookings/show
+Completed in 29ms (View: 8, DB: 1) | 200 OK [http://localhost/bookings/2]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:27:10) [GET]
+  [4;35;1mBooking Load (3.4ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 112ms (View: 93, DB: 3) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:31:58) [GET]
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.5ms)
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:34:22) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected '=', expecting tCOLON2 or '[' or '.'
+;  for i=0, i++, i<10 
+         ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected ','
+;  for i=0, i++, i<10 
+                ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object(local_assigns)
+            old_output_buffer = output_buffer;availability = local_assigns[:availability];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div>\n"
+;  for i=0, i++, i<10 
+@output_buffer.concat(( i ).to_s); @output_buffer.concat "\n"
+;  end 
+@output_buffer.concat "</div>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:20:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:19:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/partials.rb:184:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:262:in `render'
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:28:in `_run_erb_app47views47bookings47index46html46erb'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:301:in `with_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:30:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected '=', expecting tCOLON2 or '[' or '.'
+;  for i=0, i++, i<10 
+         ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected ','
+;  for i=0, i++, i<10 
+                ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7: syntax error, unexpected kENSURE, expecting $end) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% for i=0, i++, i<10 -%>
+3: <%= i %>
+4: <% end -%>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:7:in `compile!'
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (56.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:37:04) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected '|'
+@output_buffer.concat(( |n| ).to_s); @output_buffer.concat "\n"
+                         ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object(local_assigns)
+            old_output_buffer = output_buffer;availability = local_assigns[:availability];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div>\n"
+;  10.times 
+@output_buffer.concat(( |n| ).to_s); @output_buffer.concat "\n"
+;  end 
+@output_buffer.concat "</div>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:20:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:19:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/partials.rb:184:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:262:in `render'
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:28:in `_run_erb_app47views47bookings47index46html46erb'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:301:in `with_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:30:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected '|'
+@output_buffer.concat(( |n| ).to_s); @output_buffer.concat "\n"
+                         ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7: syntax error, unexpected kENSURE, expecting $end) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% 10.times -%>
+3: <%= |n| %>
+4: <% end -%>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:7:in `compile!'
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (129.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:38:31) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected '|'
+@output_buffer.concat(( |n| ).to_s); @output_buffer.concat "\n"
+                         ^
+Function body:           def _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object(local_assigns)
+            old_output_buffer = output_buffer;availability = local_assigns[:availability];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div>\n"
+;  0.upto(10) { 
+@output_buffer.concat(( |n| ).to_s); @output_buffer.concat "\n"
+;  } 
+@output_buffer.concat "</div>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:9:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:20:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:19:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/partials.rb:184:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:262:in `render'
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:28:in `_run_erb_app47views47bookings47index46html46erb'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:301:in `with_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:30:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected '|'
+@output_buffer.concat(( |n| ).to_s); @output_buffer.concat "\n"
+                         ^) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% 0.upto(10) { -%>
+3: <%= |n| %>
+4: <% } -%>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:9:in `compile!'
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (70.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:39:05) [GET]
+  [4;36;1mBooking Load (2.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (1.4ms)
+Completed in 51ms (View: 34, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:39:19) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.6ms)
+Completed in 41ms (View: 24, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:39:29) [GET]
+  [4;36;1mBooking Load (1.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.7ms)
+Completed in 23ms (View: 12, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:39:41) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (3.4ms)
+Completed in 67ms (View: 50, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:39:55) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (1.4ms)
+Completed in 43ms (View: 26, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:40:04) [GET]
+  [4;35;1mBooking Load (0.9ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: no .<digit> floating literal anymore; put 0 before dot
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+                                 ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected tINTEGER
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+                                   ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+                                                ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.concat "</div>\n"
+              ^
+Function body:           def _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object(local_assigns)
+            old_output_buffer = output_buffer;availability = local_assigns[:availability];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div>\n"
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+@output_buffer.concat "</div>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:20:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:19:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/partials.rb:184:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:262:in `render'
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:28:in `_run_erb_app47views47bookings47index46html46erb'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:301:in `with_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:30:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: no .<digit> floating literal anymore; put 0 before dot
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+                                 ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected tINTEGER
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+                                   ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+; @output_buffer.concat(( 5.upto.10 { |n| puts n } ).to_s)
+                                                ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.concat "</div>\n"
+              ^) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <%= 5.upto.10 { |n| puts n } -%>
+3: </div>
+
+    app/views/bookings/_availability.html.erb:7:in `compile!'
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (58.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:40:13) [GET]
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected '{', expecting ')'
+; @output_buffer.concat(( 5.upto 10 { |n| puts n } ).to_s)
+                                     ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+; @output_buffer.concat(( 5.upto 10 { |n| puts n } ).to_s)
+                                                ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.concat "</div>\n"
+              ^
+Function body:           def _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object(local_assigns)
+            old_output_buffer = output_buffer;availability = local_assigns[:availability];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div>\n"
+; @output_buffer.concat(( 5.upto 10 { |n| puts n } ).to_s)
+@output_buffer.concat "</div>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:20:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:19:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/partials.rb:184:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:262:in `render'
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:28:in `_run_erb_app47views47bookings47index46html46erb'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:301:in `with_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:30:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected '{', expecting ')'
+; @output_buffer.concat(( 5.upto 10 { |n| puts n } ).to_s)
+                                     ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+; @output_buffer.concat(( 5.upto 10 { |n| puts n } ).to_s)
+                                                ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:3: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.concat "</div>\n"
+              ^) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <%= 5.upto 10 { |n| puts n } -%>
+3: </div>
+
+    app/views/bookings/_availability.html.erb:7:in `compile!'
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:41:21) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined method `to' for 5:Fixnum) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <%= 5.to(10) { |n| puts n } -%>
+3: </div>
+
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (60.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:41:34) [GET]
+  [4;36;1mBooking Load (0.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.7ms)
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:42:22) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (1.4ms)
+Completed in 42ms (View: 26, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:42:26) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.8ms)
+Completed in 35ms (View: 18, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:42:35) [GET]
+  [4;35;1mBooking Load (0.8ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.9ms)
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:48:19) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined method `calendar' for #<ActionView::Base:0xb609f93c>) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <%= calendar :year => 2008, :month => 9 %>
+3: </div>
+
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (111.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:49:19) [GET]
+  [4;36;1mBooking Load (0.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (54.0ms)
+Completed in 81ms (View: 74, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:50:07) [GET]
+  [4;35;1mBooking Load (0.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined local variable or method `date' for #<ActionView::Base:0xb78b7c7c>) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <%= calendar :year => date.now(year), :month => 9 %>
+3: </div>
+
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (59.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:50:34) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (34.3ms)
+Completed in 75ms (View: 58, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:54:06) [GET]
+  [4;35;1mBooking Load (1.9ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (99.4ms)
+Completed in 147ms (View: 128, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:58:42) [GET]
+  [4;36;1mBooking Load (1.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected kDO_BLOCK
+...:year => 2009, :month => 7, do |date| ; @output_buffer.conca...
+                              ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47bookings47_availability46html46erb_locals_availability_object(local_assigns)
+            old_output_buffer = output_buffer;availability = local_assigns[:availability];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div>\n"
+;  calendar :year => 2009, :month => 7, do |date| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( date.to_s ).to_s); @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n</div>\n"
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:20:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:19:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/partials.rb:184:in `render_partial'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:262:in `render'
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:28:in `_run_erb_app47views47bookings47index46html46erb'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:34:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:301:in `with_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:30:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:2: syntax error, unexpected kDO_BLOCK
+...:year => 2009, :month => 7, do |date| ; @output_buffer.conca...
+                              ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/_availability.html.erb:7: syntax error, unexpected kENSURE, expecting $end) on line #2 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7, do |date| %>
+3:   <%= date.to_s %>
+4: <% end %>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:7:in `compile!'
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (67.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 13:58:52) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (84.1ms)
+Completed in 125ms (View: 108, DB: 2) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:12:15) [GET]
+  [4;36;1mBooking Load (0.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Bookings.find_availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:13:07) [GET]
+  [4;35;1mBooking Load (1.9ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Bookings.availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (75.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:13:34) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Bookings.availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (75.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:14:40) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Bookings.availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:14:50) [GET]
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Bookings.availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:15:18) [GET]
+  [4;35;1mBooking Load (0.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Bookings.availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (129.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:15:34) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined method `each' for 10:Fixnum) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Booking.availability(date) %>
+4:     <%= bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (129.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:17:50) [GET]
+  [4;35;1mBooking Load (0.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined method `each' for 10:Fixnum) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in Booking.availability(date) %>
+4:     <% # bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (136.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:19:03) [GET]
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.availability) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in @Bookings.availability(date) %>
+4:     <% # bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (130.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:19:24) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined method `availability' for #<Array:0xb748238c>) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <% for bunk in @bookings.availability(date) %>
+4:     <% # bunk.available %>
+5:   <% end %>
+6: <% end %>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (126.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:19:48) [GET]
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (26.9ms)
+Completed in 46ms (View: 39, DB: 1) | 200 OK [http://localhost/bookings]
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 15:32:04) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:33:16) [GET]
+  [4;36;1mBooking Load (0.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `availability' for #<Class:0xb7662c10>) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <%= Booking.availability(date) %>
+4: <% end %>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (139.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:33:47) [GET]
+  [4;36;1mBooking Load (1.9ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `availability' for #<Class:0xb75f87c0>) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <%= Booking.availability(date) %>
+4: <% end %>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (134.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 15:34:08) [GET]
+  [4;36;1mBooking Load (2.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `availability' for #<Class:0xb7544cd4>) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3:   <%= Booking.availability(date) %>
+4: <% end %>
+5: </div>
+
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (127.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 15:51:33) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (54.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:28:52) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (93.0ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:29:12) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;35;1mBooking Load (0.7ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (46.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:29:17) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:29:18) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (113.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:29:28) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:30:02) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (42.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:30:13) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (18.7ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:30:36) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (88.8ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:31:37) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;35;1mBooking Load (1.0ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:32:15) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:32:31) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (114.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#show (for 127.0.0.1 at 2009-07-30 16:33:43) [GET]
+  Parameters: {"id"=>"availability"}
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE ("bookings"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Booking with ID=availability):
+  app/controllers/bookings_controller.rb:16:in `show'
+
+Rendered rescues/_trace (43.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:33:54) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 118ms (View: 101, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:34:14) [GET]
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:34:32) [GET]
+  [4;35;1mBooking Load (1.9ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 31ms (View: 12, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:35:12) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <%= link_to 'New booking', new_booking_path %>
+27: 
+28: <%= Bookings.availability %>
+
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (116.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:35:26) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `availability' for #<Class:0xb61fbec0>) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <%= link_to 'New booking', new_booking_path %>
+27: 
+28: <%= Booking.availability %>
+
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (52.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:35:58) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined local variable or method `availability' for #<ActionView::Base:0xb60c53d0>) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <%= link_to 'New booking', new_booking_path %>
+27: 
+28: <%= availability %>
+
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (117.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:37:11) [GET]
+  [4;36;1mBooking Load (1.9ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `availability' for #<Class:0xb61ec678>) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <%= link_to 'New booking', new_booking_path %>
+27: 
+28: <%= Booking.availability %>
+
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (52.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:37:28) [GET]
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant ActionView::Base::CompiledTemplates::Bookings) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <%= link_to 'New booking', new_booking_path %>
+27: 
+28: <%= Bookings.availability %>
+
+    app/views/bookings/index.html.erb:28
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (120.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:37:53) [GET]
+  [4;35;1mBooking Load (2.1ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 45ms (View: 28, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:38:16) [GET]
+  [4;36;1mBooking Load (1.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 56ms (View: 38, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:38:30) [GET]
+  [4;35;1mBooking Load (1.9ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 26ms (View: 8, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:38:59) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `availability' for #<Class:0xb6129efc>) on line #16 of app/views/bookings/index.html.erb:
+13:     <td><%=h booking.arrival_date %></td>
+14:     <td><%=h booking.departure_date %></td>
+15:     <td><%=h booking.bunks %></td>
+16:     <td><%=h booking.status %> <%= Booking.availability %></td>
+17:     <td><%= link_to 'Show', booking %></td>
+18:     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+19:     <td><%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/bookings/index.html.erb:16
+    app/views/bookings/index.html.erb:11:in `each'
+    app/views/bookings/index.html.erb:11
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (111.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:54:43) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 38ms (View: 20, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 16:55:06) [GET]
+  [4;35;1mBooking Load (1.8ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant Booking::Bookings) on line #16 of app/views/bookings/index.html.erb:
+13:     <td><%=h booking.arrival_date %></td>
+14:     <td><%=h booking.departure_date %></td>
+15:     <td><%=h booking.bunks %></td>
+16:     <td><%=h booking.status %> <%= Booking.availability %></td>
+17:     <td><%= link_to 'Show', booking %></td>
+18:     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+19:     <td><%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/models/booking.rb:5:in `availability'
+    app/views/bookings/index.html.erb:16
+    app/views/bookings/index.html.erb:11:in `each'
+    app/views/bookings/index.html.erb:11
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (50.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:03:08) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 30ms (View: 13, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:03:30) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Completed in 45ms (View: 28, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:04:26) [GET]
+  [4;36;1mBooking Load (0.8ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+ERROR: compiling _run_erb_app47views47bookings47index46html46erb RAISED compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:26: syntax error, unexpected '(', expecting ')'
+...utput_buffer.concat(( :render(:partial => :availability) ).t...
+                              ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:26: syntax error, unexpected ')', expecting kEND
+...tial => :availability) ).to_s); @output_buffer.concat "\n\n\...
+                              ^
+Function body:           def _run_erb_app47views47bookings47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Listing bookings</h1>\n\n<table>\n  <tr>\n    <th>Arrival date</th>\n    <th>Departure date</th>\n    <th>Bunks</th>\n    <th>Status</th>\n  </tr>\n\n"
+
+
+
+
+
+
+
+
+
+;  @bookings.each do |booking| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h booking.arrival_date ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h booking.departure_date ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h booking.bunks ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h booking.status ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Show', booking ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Edit', edit_booking_path(booking) ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat(( link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n  </tr>\n"
+
+;  end ; @output_buffer.concat "\n</table>\n\n<br />\n\n"
+
+
+
+
+; @output_buffer.concat(( :render(:partial => :availability) ).to_s); @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:32:in `compile!'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/steph/Sites/RailsDev/simplebunks/app/controllers/bookings_controller.rb:7:in `index'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/var/lib/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/var/lib/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/var/lib/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/var/lib/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/var/lib/gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/var/lib/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:26: syntax error, unexpected '(', expecting ')'
+...utput_buffer.concat(( :render(:partial => :availability) ).t...
+                              ^
+/home/steph/Sites/RailsDev/simplebunks/app/views/bookings/index.html.erb:26: syntax error, unexpected ')', expecting kEND
+...tial => :availability) ).to_s); @output_buffer.concat "\n\n\...
+                              ^) on line #26 of app/views/bookings/index.html.erb:
+23: 
+24: <br />
+25: 
+26: <%= :render(:partial => :availability) %>
+
+    app/views/bookings/index.html.erb:32:in `compile!'
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (55.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:04:49) [GET]
+  [4;35;1mBooking Load (0.9ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (undefined method `include?' for :availability:Symbol) on line #26 of app/views/bookings/index.html.erb:
+23: 
+24: <br />
+25: 
+26: <%= render(:partial => :availability) %>
+
+    app/views/bookings/index.html.erb:26
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (69.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:05:52) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (29.8ms)
+Completed in 154ms (View: 136, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:06:21) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (39.9ms)
+Completed in 93ms (View: 73, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:06:55) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (25.5ms)
+Completed in 60ms (View: 42, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:08:23) [GET]
+
+SyntaxError (/home/steph/Sites/RailsDev/simplebunks/app/models/booking.rb:7: syntax error, unexpected kEND):
+  app/controllers/bookings_controller.rb:5:in `index'
+
+Rendered rescues/_trace (84.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:08:40) [GET]
+  [4;35;1mBooking Load (1.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3: <%= Booking.availability(date) %>
+4: <% end %>
+5: </div>
+
+    app/models/booking.rb:5:in `availability'
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:26
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (77.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:09:22) [GET]
+  [4;36;1mBooking Load (1.9ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #3 of app/views/bookings/_availability.html.erb:
+1: <div>
+2: <% calendar :year => 2009, :month => 7 do |date| %>
+3: <%= Booking.availability(date) %>
+4: <% end %>
+5: </div>
+
+    app/models/booking.rb:5:in `availability'
+    app/views/bookings/_availability.html.erb:3
+    app/views/bookings/_availability.html.erb:2
+    app/views/bookings/index.html.erb:26
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (81.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:10:08) [GET]
+  [4;35;1mBooking Load (1.1ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <div>
+27: <% calendar :year => 2009, :month => 7 do |date| %>
+28: <%= Booking.availability(date) %>
+29: <% end %>
+30: </div>
+31: 
+
+    app/models/booking.rb:5:in `availability'
+    app/views/bookings/index.html.erb:28
+    app/views/bookings/index.html.erb:27
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (150.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:10:18) [GET]
+  [4;36;1mBooking Load (1.9ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.6ms)
+Completed in 101ms (View: 80, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:12:20) [GET]
+
+SyntaxError (/home/steph/Sites/RailsDev/simplebunks/app/models/booking.rb:10: syntax error, unexpected kEND, expecting $end):
+  app/controllers/bookings_controller.rb:5:in `index'
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:12:33) [GET]
+  [4;35;1mBooking Load (4.4ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (uninitialized constant Booking::Bookings) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <div>
+27: <% calendar :year => 2009, :month => 7 do |date| %>
+28: <%= Booking.availability(date) %>
+29: <% end %>
+30: </div>
+31: 
+
+    app/models/booking.rb:5:in `availability'
+    app/views/bookings/index.html.erb:28
+    app/views/bookings/index.html.erb:27
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (153.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:12:59) [GET]
+  [4;36;1mBooking Load (1.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+Rendered bookings/_availability (0.1ms)
+Completed in 66ms (View: 49, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:13:21) [GET]
+  [4;35;1mBooking Load (6.3ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `Bookings' for #<Class:0xb616d8f0>) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <div>
+27: <% calendar :year => 2009, :month => 7 do |date| %>
+28: <%= Booking.availability(date) %>
+29: <% end %>
+30: </div>
+31: 
+
+    app/models/booking.rb:5:in `availability'
+    app/views/bookings/index.html.erb:28
+    app/views/bookings/index.html.erb:27
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (145.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:17:10) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "bookings" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendered bookings/_availability (0.1ms)
+Completed in 80ms (View: 63, DB: 2) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:34:03) [GET]
+  [4;35;1mBooking Load (1.6ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <div>
+27: <% calendar :year => 2009, :month => 7 do |date| %>
+28: <%= Booking.availability(date) %>
+29: <% end %>
+30: </div>
+31: 
+
+    app/views/bookings/index.html.erb:28:in `availability'
+    app/views/bookings/index.html.erb:28
+    app/views/bookings/index.html.erb:27
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (67.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:35:27) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-01' and departure_date > '2009-07-01') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-02' and departure_date > '2009-07-02') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-03' and departure_date > '2009-07-03') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-04' and departure_date > '2009-07-04') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-05' and departure_date > '2009-07-05') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-06' and departure_date > '2009-07-06') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-07' and departure_date > '2009-07-07') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-08' and departure_date > '2009-07-08') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-09' and departure_date > '2009-07-09') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-10' and departure_date > '2009-07-10') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-11' and departure_date > '2009-07-11') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-12' and departure_date > '2009-07-12') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-13' and departure_date > '2009-07-13') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-14' and departure_date > '2009-07-14') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-15' and departure_date > '2009-07-15') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-16' and departure_date > '2009-07-16') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-17' and departure_date > '2009-07-17') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-18' and departure_date > '2009-07-18') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-19' and departure_date > '2009-07-19') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-20' and departure_date > '2009-07-20') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-21' and departure_date > '2009-07-21') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-22' and departure_date > '2009-07-22') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-23' and departure_date > '2009-07-23') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-24' and departure_date > '2009-07-24') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-25' and departure_date > '2009-07-25') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-26' and departure_date > '2009-07-26') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') [0m
+Rendered bookings/_availability (0.1ms)
+Completed in 170ms (View: 145, DB: 9) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:37:41) [GET]
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-01' and departure_date > '2009-07-01') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-02' and departure_date > '2009-07-02') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-03' and departure_date > '2009-07-03') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-04' and departure_date > '2009-07-04') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-05' and departure_date > '2009-07-05') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-06' and departure_date > '2009-07-06') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-07' and departure_date > '2009-07-07') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-08' and departure_date > '2009-07-08') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-09' and departure_date > '2009-07-09') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-10' and departure_date > '2009-07-10') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-11' and departure_date > '2009-07-11') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-12' and departure_date > '2009-07-12') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-13' and departure_date > '2009-07-13') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-14' and departure_date > '2009-07-14') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-15' and departure_date > '2009-07-15') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-16' and departure_date > '2009-07-16') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-17' and departure_date > '2009-07-17') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-18' and departure_date > '2009-07-18') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-19' and departure_date > '2009-07-19') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-20' and departure_date > '2009-07-20') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-21' and departure_date > '2009-07-21') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-22' and departure_date > '2009-07-22') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-23' and departure_date > '2009-07-23') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-24' and departure_date > '2009-07-24') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-25' and departure_date > '2009-07-25') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-26' and departure_date > '2009-07-26') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') [0m
+
+ActionView::TemplateError (undefined method `bunks' for #<Array:0xb61305cc>) on line #28 of app/views/bookings/index.html.erb:
+25: 
+26: <div>
+27: <% calendar :year => 2009, :month => 7 do |date| %>
+28: <%= Booking.availability(date) %>
+29: <% end %>
+30: </div>
+31: 
+
+    app/models/booking.rb:7:in `availability'
+    app/models/booking.rb:6:in `each'
+    app/models/booking.rb:6:in `availability'
+    app/views/bookings/index.html.erb:28
+    app/views/bookings/index.html.erb:27
+    app/controllers/bookings_controller.rb:7:in `index'
+
+Rendered rescues/_trace (132.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:38:46) [GET]
+  [4;35;1mBooking Load (1.8ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-01' and departure_date > '2009-07-01') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-02' and departure_date > '2009-07-02') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-03' and departure_date > '2009-07-03') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-04' and departure_date > '2009-07-04') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-05' and departure_date > '2009-07-05') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-06' and departure_date > '2009-07-06') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-07' and departure_date > '2009-07-07') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-08' and departure_date > '2009-07-08') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-09' and departure_date > '2009-07-09') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-10' and departure_date > '2009-07-10') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-11' and departure_date > '2009-07-11') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-12' and departure_date > '2009-07-12') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-13' and departure_date > '2009-07-13') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-14' and departure_date > '2009-07-14') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-15' and departure_date > '2009-07-15') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-16' and departure_date > '2009-07-16') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-17' and departure_date > '2009-07-17') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-18' and departure_date > '2009-07-18') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-19' and departure_date > '2009-07-19') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-20' and departure_date > '2009-07-20') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-21' and departure_date > '2009-07-21') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-22' and departure_date > '2009-07-22') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-23' and departure_date > '2009-07-23') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-24' and departure_date > '2009-07-24') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-25' and departure_date > '2009-07-25') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-26' and departure_date > '2009-07-26') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') [0m
+Rendered bookings/_availability (0.1ms)
+Completed in 107ms (View: 84, DB: 8) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:39:28) [GET]
+  [4;35;1mBooking Load (0.7ms)[0m   [0mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') [0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') [0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') [0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-08' and departure_date > '2009-08-08') [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-09' and departure_date > '2009-08-09') [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-10' and departure_date > '2009-08-10') [0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-11' and departure_date > '2009-08-11') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-12' and departure_date > '2009-08-12') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-13' and departure_date > '2009-08-13') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-14' and departure_date > '2009-08-14') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-15' and departure_date > '2009-08-15') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-16' and departure_date > '2009-08-16') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-17' and departure_date > '2009-08-17') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-18' and departure_date > '2009-08-18') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-19' and departure_date > '2009-08-19') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-20' and departure_date > '2009-08-20') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-21' and departure_date > '2009-08-21') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-22' and departure_date > '2009-08-22') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-23' and departure_date > '2009-08-23') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-24' and departure_date > '2009-08-24') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-25' and departure_date > '2009-08-25') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-26' and departure_date > '2009-08-26') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-27' and departure_date > '2009-08-27') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-28' and departure_date > '2009-08-28') [0m
+  [4;36;1mBooking Load (0.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-29' and departure_date > '2009-08-29') [0m
+  [4;35;1mBooking Load (0.1ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-30' and departure_date > '2009-08-30') [0m
+Rendered bookings/_availability (0.1ms)
+Completed in 71ms (View: 57, DB: 7) | 200 OK [http://localhost/bookings/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-07-30 17:40:16) [GET]
+  [4;36;1mBooking Load (1.6ms)[0m   [0;1mSELECT * FROM "bookings" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mBooking Load (1.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') [0m
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-08' and departure_date > '2009-08-08') [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-09' and departure_date > '2009-08-09') [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-10' and departure_date > '2009-08-10') [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-11' and departure_date > '2009-08-11') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-12' and departure_date > '2009-08-12') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-13' and departure_date > '2009-08-13') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-14' and departure_date > '2009-08-14') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-15' and departure_date > '2009-08-15') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-16' and departure_date > '2009-08-16') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-17' and departure_date > '2009-08-17') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-18' and departure_date > '2009-08-18') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-19' and departure_date > '2009-08-19') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-20' and departure_date > '2009-08-20') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-21' and departure_date > '2009-08-21') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-22' and departure_date > '2009-08-22') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-23' and departure_date > '2009-08-23') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-24' and departure_date > '2009-08-24') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-25' and departure_date > '2009-08-25') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-26' and departure_date > '2009-08-26') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-27' and departure_date > '2009-08-27') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-28' and departure_date > '2009-08-28') [0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-29' and departure_date > '2009-08-29') [0m
+  [4;36;1mBooking Load (0.2ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-30' and departure_date > '2009-08-30') [0m
+Rendered bookings/_availability (188.0ms)
+Completed in 239ms (View: 212, DB: 12) | 200 OK [http://localhost/bookings/]

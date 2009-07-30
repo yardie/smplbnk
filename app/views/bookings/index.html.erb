@@ -1,0 +1,26 @@
+<h1>Listing bookings</h1>
+
+<table>
+  <tr>
+    <th>Arrival date</th>
+    <th>Departure date</th>
+    <th>Bunks</th>
+    <th>Status</th>
+  </tr>
+
+<% @bookings.each do |booking| %>
+  <tr>
+    <td><%=h booking.arrival_date %></td>
+    <td><%=h booking.departure_date %></td>
+    <td><%=h booking.bunks %></td>
+    <td><%=h booking.status %></td>
+    <td><%= link_to 'Show', booking %></td>
+    <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+    <td><%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= render(:partial => "availability") %>

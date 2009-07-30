@@ -1,0 +1,5 @@
+<div>
+<% calendar :year => 2009, :month => 8 do |date| %>
+<%= Booking.availability(date) %>
+<% end %>
+</div>

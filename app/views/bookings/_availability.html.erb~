@@ -1,1 +1,13 @@
-nothing here
+<div>
+<%
+  calendar :year => 2009, :month => 8 do |date|
+    dayAvail = Booking.availability(date)
+    AccommType.find(:all).each do |dA|
+%>
+<br />
+<%= dA.name %>: <%= dayAvail[dA] %>
+<%
+    end
+  end
+%>
+</div>

@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   # GET /bookings.xml
   def index
     @bookings = Booking.all
+    @tester = Booking.find(:all, :conditions => ['arrival_date <= ? and departure_date > ?', '01/08/2009', '01/08/2009'])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,11 +82,6 @@ class BookingsController < ApplicationController
       format.html { redirect_to(bookings_url) }
       format.xml  { head :ok }
     end
-  end
-  
-  def bedsleft
-    @bookings = Booking.find(all)
-    totalBeds = 10
   end
 
 end

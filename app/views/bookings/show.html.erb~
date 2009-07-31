@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <b>Bunks:</b>
+  <%=h @booking.bunks %>
+</p>
+
+<p>
   <b>Status:</b>
   <%=h @booking.status %>
 </p>

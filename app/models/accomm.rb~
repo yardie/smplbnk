@@ -1,0 +1,6 @@
+class Accomm < ActiveRecord::Base
+
+  belongs_to :booking
+  has_many :accomm_types
+
+end

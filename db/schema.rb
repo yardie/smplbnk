@@ -9,12 +9,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090730122328) do
+ActiveRecord::Schema.define(:version => 20090730221859) do
+
+  create_table "accomm_types", :force => true do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "total"
+  end
+
+  create_table "accomms", :force => true do |t|
+    t.integer "booking_id"
+    t.integer "accomm_type_id"
+    t.integer "accomm_quantity"
+  end
 
   create_table "bookings", :force => true do |t|
     t.date     "arrival_date"
     t.date     "departure_date"
-    t.integer  "bunks"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"

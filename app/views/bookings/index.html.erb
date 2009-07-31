@@ -12,7 +12,7 @@
   <tr>
     <td><%=h booking.arrival_date %></td>
     <td><%=h booking.departure_date %></td>
-    <td><%=h booking.bunks %></td>
+    <td></td>
     <td><%=h booking.status %></td>
     <td><%= link_to 'Show', booking %></td>
     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= render(:partial => "availability") %>
+<%= render :partial => 'availability' %>

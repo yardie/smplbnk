@@ -1,0 +1,3 @@
+class AccommType < ActiveRecord::Base
+
+end

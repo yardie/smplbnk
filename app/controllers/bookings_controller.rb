@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   # GET /bookings.xml
   def index
     @bookings = Booking.all
+    @tester = Booking.find(:all, :conditions => ['arrival_date <= ? and departure_date > ?', '2009-08-01', '2009-08-01'])
 
     respond_to do |format|
       format.html # index.html.erb

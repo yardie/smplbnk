@@ -1,0 +1,7 @@
+<table>
+  <% @dayAvail.each do |daa| %>
+  <tr>
+    <td></td>
+  </tr>
+  <% end %>
+</table>

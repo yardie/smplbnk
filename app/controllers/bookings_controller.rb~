@@ -1,10 +1,18 @@
 class BookingsController < ApplicationController
+
   # GET /bookings
   # GET /bookings.xml
   def index
     @bookings = Booking.all
-    @tester = Booking.find(:all, :conditions => ['arrival_date <= ? and departure_date > ?', '01/08/2009', '01/08/2009'])
-
+    @availMatrix = Booking.availRange
+    
+#    fromdate = Date.new(2009, 7, 20)
+#    todate = Date.new(2009, 8, 4)
+#    @daylity = {}
+#    fromdate.upto(todate) do |cd|
+#      @daylity[cd] = Booking.availability(cd)
+#    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bookings }

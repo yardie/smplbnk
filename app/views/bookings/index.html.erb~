@@ -23,12 +23,6 @@
 
 <br />
 
-<% @tester.each do |test|
-    test.accomms.find(:all).each do |tt|
- %>
-<%= tt.accomm_type_id %>:<%= tt.accomm_quantity %>
-<%
-  end
- end %>
+<br />
 
 <%= render :partial => 'availability' %>

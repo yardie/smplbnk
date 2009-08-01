@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
   # GET /bookings.xml
   def index
     @bookings = Booking.all
-    @availMatrix = Booking.availRange(Date.new(2009, 7, 20),Date.new(2009, 8, 14))
+    @availMatrix = Booking.availRange(Date.new(2009, 7, 27),Date.new(2009, 8, 7))
+    @displayAccommTypes = AccommType.find(:all)
     
 #    fromdate = Date.new(2009, 7, 20)
 #    todate = Date.new(2009, 8, 4)

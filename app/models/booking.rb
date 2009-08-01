@@ -12,7 +12,7 @@ class Booking < ActiveRecord::Base
 
     # for each Accommodation Type set its availability to its total in a hash, then subtract the relevant Accommodation Type quantity using todaysBookings
 
-    # TODO tried @totalAccTypes ||= AccommType.getTotals but accommAvail = @totalAccTypes is associated by reference, not copy values
+    # TODO tried @totalAccTypes ||= AccommType.getTotals but accommAvail = @totalAccTypes is associated by reference, not copy values - adds extra load on db at present
     accommAvail = {}
     accommAvail = AccommType.getTotals
 
@@ -29,11 +29,17 @@ class Booking < ActiveRecord::Base
   end
   
   def self.availRange(fromDate = Date.today,toDate = fromDate + 21.days)
+  
+    # build an availability matrix
+  
+    # TODO implement as a collection of AccommSpace objects rather than a hash?
+  
     ranged = {}
     fromDate.upto(toDate) do |selDate|
       ranged[selDate] = Booking.availability(selDate)
     end
-    ranged
+    # TODO not sure why need to sort...
+    ranged.sort
   end
 
 end

@@ -1,13 +1,13 @@
-<div>
-<%
-  calendar :year => 2009, :month => 8 do |date|
-    dayAvail = Booking.availability(date)
-    AccommType.find(:all).each do |dA|
-%>
-<br />
-<%= dA.name %>: <%= dayAvail[dA.id] %>
-<%
-    end
-  end
-%>
-</div>
+<table>
+  <tr>
+  <% @availMatrix.each do |dl| %>
+  <td>
+    <%= dl[0].strftime("%a, %d %b %y") %>
+    <% @displayAccommTypes.each do |dAT| %>
+      <br />
+      <%= dl[1][dAT.id] %>
+    <% end %>
+  </td>
+  <% end %>
+  </tr>
+</table>

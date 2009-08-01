@@ -12,7 +12,7 @@
   <tr>
     <td><%=h booking.arrival_date %></td>
     <td><%=h booking.departure_date %></td>
-    <td></td>
+    <td><% booking.accomms.each do |accs| %><%= accs.accomm_quantity %> x <%= accs.accomm_type.name %><br /><% end %></td>
     <td><%=h booking.status %></td>
     <td><%= link_to 'Show', booking %></td>
     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contained_in_id: 1
+  contained_item_id: 1
+  quantity: 1
+
+two:
+  contained_in_id: 1
+  contained_item_id: 1
+  quantity: 1

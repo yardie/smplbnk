@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090730221859) do
+ActiveRecord::Schema.define(:version => 20090801124630) do
+
+  create_table "accomm_contains", :force => true do |t|
+    t.integer  "contained_in_id"
+    t.integer  "contained_item_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "accomm_types", :force => true do |t|
     t.string  "name"

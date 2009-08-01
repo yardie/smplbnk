@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.xml
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all(:order => "arrival_date, departure_date")
     @availMatrix = Booking.availRange(Date.new(2009, 7, 27),Date.new(2009, 8, 7))
     @displayAccommTypes = AccommType.find(:all)
     

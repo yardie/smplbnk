@@ -1,6 +1,6 @@
 class Accomm < ActiveRecord::Base
 
   belongs_to :booking
-  belongs_to :accomm_types
+  belongs_to :accomm_type
 
 end

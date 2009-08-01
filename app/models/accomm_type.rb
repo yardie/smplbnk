@@ -1,6 +1,8 @@
 class AccommType < ActiveRecord::Base
 
-  belongs_to :accomm
+  has_many :accomms
+  has_many :bookings, :through => :accomms
+  has_many :accomm_contains
   
   def self.getTotals
     accommTotals = {}

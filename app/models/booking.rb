@@ -20,25 +20,30 @@ class Booking < ActiveRecord::Base
 
 
     @todaysBookings.each do |tBook|
-      tBook.accomms.find(:all).each do |tBAccs|
+      tB = tBook.accomms.find(:all)
+      tB.each do |tBAccs|
 
         accommAvail[tBAccs.accomm_type_id] -= tBAccs.accomm_quantity
       
-        # TODO contItems could be cleaned up quite a lot
+      end
+      
+      # previously had 1 loop - split in to two to prevent erroneous calculation of availability due to the potential of not completing calculation - necessary?
+      # TODO post processing could be cleaned up quite a lot
+      tB.each do |tBAccCon|
+
         # if this accommodation type contains a number of other accommodation types (bunkrooms contain a number of bunks), then subtract that quantity from that accommodation type - if it is in tBAccs then it has been booked!
-        contItems = AccommContain.find(:all, :conditions => {:contained_in_id => tBAccs.accomm_type.id})
+        contItems = AccommContain.find(:all, :conditions => {:contained_in_id => tBAccCon.accomm_type.id})
         contItems.each do |cI|
           unless cI.nil?
             accommAvail[cI.contained_item_id] -= cI.quantity
           end
         end
 
-        #TODO is this going to be erroneous if the total bunks available haven't been calculated yet? - move this (and previous) to post calc?
         # if this accommodation type is contained by others, work out if they are still available (bunkrooms from bunks)
-        contIns = AccommContain.find(:all, :conditions => {:contained_item_id => tBAccs.accomm_type.id})
+        contIns = AccommContain.find(:all, :conditions => {:contained_item_id => tBAccCon.accomm_type.id})
         contIns.each do |cIs|
           unless cIs.nil?
-            if accommAvail[tBAccs.accomm_type.id] < cIs.quantity
+            if accommAvail[tBAccCon.accomm_type.id] < cIs.quantity
               accommAvail[cIs.contained_in_id] -= 1 unless accommAvail[cIs.contained_in_id] <= 0
             end
           end
@@ -60,7 +65,7 @@ class Booking < ActiveRecord::Base
     fromDate.upto(toDate) do |selDate|
       ranged[selDate] = Booking.availability(selDate)
     end
-    # TODO not sure why need to sort...
+    # TODO not sure why need to sort but it does (or they come out all jumbled)
     ranged.sort
   end
 

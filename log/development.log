@@ -21238,3 +21238,819 @@ Rendering bookings/index
   [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
 Rendered bookings/_availability (1.8ms)
 Completed in 117ms (View: 14, DB: 13) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-08-01 23:30:14) [GET]
+  [4;36;1mBooking Load (2.6ms)[0m   [0;1mSELECT * FROM "bookings" ORDER BY arrival_date, departure_date[0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mAccommType Load (1.6ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mAccomm Load (0.4ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mAccommType Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mAccommContain Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mAccomm Load (0.2ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mAccommContain Load (0.2ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mAccommContain Load (0.7ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.6ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mAccommType Load (0.2ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+Rendered bookings/_availability (1.8ms)
+Completed in 127ms (View: 14, DB: 14) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-08-01 23:32:58) [GET]
+  [4;35;1mBooking Load (2.3ms)[0m   [0mSELECT * FROM "bookings" ORDER BY arrival_date, departure_date[0m
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mAccommType Load (1.4ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mAccommType Load (0.3ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mAccommContain Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mAccommContain Load (0.2ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mAccommType Load (0.4ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mAccommContain Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mAccomm Load (0.2ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mAccommType Load (0.2ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+Rendered bookings/_availability (2.0ms)
+Completed in 189ms (View: 74, DB: 13) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-08-01 23:37:58) [GET]
+  [4;36;1mBooking Load (1.0ms)[0m   [0;1mSELECT * FROM "bookings" ORDER BY arrival_date, departure_date[0m
+  [4;35;1mBooking Load (0.2ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mAccommType Load (0.6ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mAccomm Load (0.4ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mAccommType Load (0.4ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mAccommContain Load (0.4ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mAccommContain Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mAccommContain Load (0.2ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mAccommContain Load (0.4ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.6ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mAccommType Load (0.2ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+Rendered bookings/_availability (1.8ms)
+Completed in 110ms (View: 14, DB: 11) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-08-01 23:38:13) [GET]
+  [4;35;1mBooking Load (2.4ms)[0m   [0mSELECT * FROM "bookings" ORDER BY arrival_date, departure_date[0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mAccommType Load (1.4ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mBooking Load (1.3ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mAccomm Load (0.8ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mAccommType Load (0.3ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mAccommContain Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mAccommType Load (0.2ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mAccommContain Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mAccommType Load (0.2ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mAccommType Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mAccommContain Load (0.2ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mAccommContain Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.5ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+Rendered bookings/_availability (1.9ms)
+Completed in 154ms (View: 14, DB: 14) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-08-01 23:38:15) [GET]
+  [4;36;1mBooking Load (2.3ms)[0m   [0;1mSELECT * FROM "bookings" ORDER BY arrival_date, departure_date[0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mAccommType Load (0.7ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mBooking Load (0.7ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mAccommType Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mAccommContain Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mAccommContain Load (0.2ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mAccomm Load (0.3ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mAccommContain Load (0.3ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mAccomm Load (0.4ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mAccommType Load (0.3ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+Rendered bookings/_availability (1.9ms)
+Completed in 186ms (View: 15, DB: 12) | 200 OK [http://localhost/]
+
+
+Processing BookingsController#index (for 127.0.0.1 at 2009-08-01 23:40:05) [GET]
+  [4;35;1mBooking Load (3.0ms)[0m   [0mSELECT * FROM "bookings" ORDER BY arrival_date, departure_date[0m
+  [4;36;1mBooking Load (0.7ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-27' and departure_date > '2009-07-27') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mAccommType Load (1.5ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mBooking Load (1.0ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-28' and departure_date > '2009-07-28') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mAccomm Load (0.7ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mAccommType Load (0.8ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mAccommContain Load (0.9ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mAccommContain Load (0.4ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mBooking Load (1.1ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-29' and departure_date > '2009-07-29') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mAccomm Load (0.6ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mAccommType Load (0.6ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mAccommContain Load (0.7ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mAccommContain Load (0.3ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mBooking Load (0.6ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-30' and departure_date > '2009-07-30') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mAccomm Load (0.3ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mAccommType Load (0.2ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mAccommContain Load (0.4ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-07-31' and departure_date > '2009-07-31') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-01' and departure_date > '2009-08-01') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-02' and departure_date > '2009-08-02') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mAccomm Load (0.4ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mAccommType Load (0.2ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mAccommContain Load (0.1ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mAccommContain Load (0.1ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.4ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-03' and departure_date > '2009-08-03') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-04' and departure_date > '2009-08-04') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.5ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-05' and departure_date > '2009-08-05') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mBooking Load (0.4ms)[0m   [0;1mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-06' and departure_date > '2009-08-06') ORDER BY arrival_date, departure_date[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;35;1mBooking Load (0.3ms)[0m   [0mSELECT * FROM "bookings" WHERE (arrival_date <= '2009-08-07' and departure_date > '2009-08-07') ORDER BY arrival_date, departure_date[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_in_id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_contains" WHERE ("accomm_contains"."contained_item_id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" [0m
+Rendering template within layouts/bookings
+Rendering bookings/index
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomms" WHERE ("accomms".booking_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "accomm_types" WHERE ("accomm_types"."id" = 4) [0m
+Rendered bookings/_availability (1.8ms)
+Completed in 170ms (View: 13, DB: 18) | 200 OK [http://localhost/]

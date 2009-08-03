@@ -1,13 +1,18 @@
-<table border="1">
-  <tr>
+<div style="align:bottom">
   <% @availMatrix.each do |dl| %>
-  <td>
-    <%= dl[0].strftime("%a, %d %b %y") %>
+  <div style="float:left;border-left:thin solid grey">
+    <div style="padding:8px;text-align:center">
+      <%= dl[0].strftime("<strong>%a</strong>,<br /> %d %b") %>
+    </div>
     <% @displayAccommTypes.each do |dAT| %>
-      <br />
-      <%= dl[1][dAT.id] %>
+      <% if dl[1][dAT.id] > 0 %>
+      <div style="background-color:#ccccff;padding:2px">
+      <% else %>
+      <div style="background-color:#ffcccc;padding:2px">
+      <% end %>
+        <%= dl[1][dAT.id] %>
+      </div>
     <% end %>
-  </td>
+  </div>
   <% end %>
-  </tr>
-</table>
+</div>

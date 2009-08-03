@@ -13,7 +13,7 @@
     <td><%=h booking.arrival_date %></td>
     <td><%=h booking.departure_date %></td>
     <td><% booking.accomms.each do |accs| %><%= accs.accomm_quantity %> x <%= accs.accomm_type.name %><br /><% end %></td>
-    <td><%=h booking.status %></td>
+    <td><%=h booking.status.name %></td>
     <td><%= link_to 'Show', booking %></td>
     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
     <td><%= link_to 'Destroy', booking, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,5 +22,6 @@
 </table>
 
 <br />
-
+<div style="float:middle">
 <%= render :partial => 'availability' %>
+</div>

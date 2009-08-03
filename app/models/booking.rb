@@ -2,6 +2,7 @@ class Booking < ActiveRecord::Base
 
   has_many :accomms
   has_many :accomm_types, :through => :accomms
+  belongs_to :status
 
   def self.availability(date)
   
